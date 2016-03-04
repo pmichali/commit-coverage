@@ -6,7 +6,7 @@ import subprocess
 import sys
 import tempfile
 
-import my_coverage as cover
+import commit_coverage as cover
 
 if sys.version_info > (3, ):
     import builtins

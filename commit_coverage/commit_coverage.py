@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-# my_coverage
+# commit_coverage
 #
 # Indicates the coverage for diffs specified in the command. It assumes that
 # coverage was run before using this tool (and report should be on what is
 # in the repo currently).
 #
 # Usage:
-#    my_coverage.py [-h] [-c CONTEXT] [-w WHICH] repo-dir
+#    commit_coverage.py [-h] [-c CONTEXT] [-w WHICH] repo-dir
 # Where:
 # -h, --help     Show this help message and exit.
 # -c CONTEXT, --context CONTEXT
@@ -234,8 +234,8 @@ def validate(parser, provided_args=None):
     return args
 
 
-def main(parser):
-    args = validate(parser)
+def main():
+    args = validate(setup_parser())
     files = collect_diff_files(args.root, args.commits)
     diff_files = collect_diffs_for_files(args.root, args.commits, files,
                                          args.context)
@@ -263,4 +263,4 @@ def setup_parser():
 
 
 if __name__ == "__main__":
-    main(setup_parser())
+    main()

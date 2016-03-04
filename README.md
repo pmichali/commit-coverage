@@ -1,4 +1,4 @@
-my-coverage
+commit-coverage
 ==============
 
 This allows you to assess the coverage of changes you have in a repo. It
@@ -19,7 +19,7 @@ Assuming you have a repo with uncommitted changes, you can run the command
 as follows:
 
 <pre>
-    python my_coverage.py /opt/stack/networking-cisco
+    python commit_coverage /opt/stack/networking-cisco
 </pre>
 
 The argument must be the root of a git repo that has coverage data in a
@@ -90,7 +90,7 @@ coverage report. For example, you can do:
 
 <pre>
     cd /opt/stack/neutron
-    python my_coverage.py --context 5 --which HEAD~5..HEAD~ .
+    python commit_coverage --context 5 --which HEAD~5..HEAD~ .
 </pre>
 
 This runs the tool on a neutron repo, shows more context lines, and will
