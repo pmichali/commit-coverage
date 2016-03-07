@@ -19,7 +19,7 @@ Behavior
 Assuming you have a repo with uncommitted changes, you can run the command
 as follows::
 
-    python commit_coverage /opt/stack/networking-cisco
+    commit_coverage /opt/stack/networking-cisco
 
 The argument must be the root of a git repo that has coverage data in a
 'cover' subdirectory.
@@ -86,7 +86,7 @@ to use for the diff, just make sure that the most recent corresponds to the
 coverage report. For example, you can do::
 
     cd /opt/stack/neutron
-    python commit_coverage --context 5 --which HEAD~5..HEAD~ .
+    commit_coverage --context 5 --which HEAD~5..HEAD~ .
 
 This runs the tool on a neutron repo, shows more context lines, and will
 do a diff between HEAD~5 and HEAD~ commits.
