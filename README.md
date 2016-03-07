@@ -1,26 +1,25 @@
-commit-coverage
-==============
+# commit-coverage
+
 
 This allows you to assess the coverage of changes you have in a repo. It
 is intended for use, when preparing to push code up for review upstream.
 
-Usage
------
+## Usage
+
 As a prerequisite to using this script, run coverage in the repo, to
 produce coverage report files in a 'cover' directory at the root of the
 repo's tree. This coverage should be done on the code that will be
 upstreamed (either what is in the working directory, or what has been
 committed to the local repo).
 
-Behavior
---------
+## Behavior
 
 Assuming you have a repo with uncommitted changes, you can run the command
 as follows:
 
-<pre>
+```
     python commit_coverage /opt/stack/networking-cisco
-</pre>
+```
 
 The argument must be the root of a git repo that has coverage data in a
 'cover' subdirectory.
@@ -30,7 +29,7 @@ latest commit (HEAD), with (up to) three lines of context. That output will
 be checked against coverage data and a report produced. Here's what the
 output looks like:
 
-<pre>
+```
     devstack/csr1kv/cisco_neutron (No coverage data)
 
     networking_cisco/apps/saf/agent/dfa_agent.py (No added/changed lines)
@@ -51,7 +50,7 @@ output looks like:
       386                                'org:part name is greater than 32'),
       387                            len(':'.join((proj_name, part_name))))
       388 mis              return
-</pre>
+```
 
 Each file from the diff will be reported. If the file was not processed
 byt the coverage test, or there were no added or changed lines in the
@@ -61,10 +60,10 @@ For files with coverage data and added/changes lines, the output will
 look like the third file. Each line number from the diff is shown, with
 the coverage status, which can be:
 
-- 'run'  The line was invoked as part of coverage run
-- 'mis'  The line was not invoked during coverage
-- 'par'  The line was partially covered
-- '   '  The line was not considered for coverage (e.g. blank, non-executable)
+* 'run'  The line was invoked as part of coverage run
+* 'mis'  The line was not invoked during coverage
+* 'par'  The line was partially covered
+* '   '  The line was not considered for coverage (e.g. blank, non-executable)
 
 Next, if the line was added/changed, a '+' is shown. If it was a context line
 for the diff region, a ' ' is shown. Deleted lines are not shown. After that,
@@ -88,10 +87,10 @@ previous commit (HEAD^..HEAD). Otherwise, you can provide the commit versions
 to use for the diff, just make sure that the most recent corresponds to the
 coverage report. For example, you can do:
 
-<pre>
+```
     cd /opt/stack/neutron
     python commit_coverage --context 5 --which HEAD~5..HEAD~ .
-</pre>
+```
 
 This runs the tool on a neutron repo, shows more context lines, and will
 do a diff between HEAD~5 and HEAD~ commits.
