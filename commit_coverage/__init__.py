@@ -76,7 +76,7 @@ source_line_re = re.compile(r'<p id="n(\d+)" class="([^"]+)"')
 title_re = re.compile(r'\s*<title>Coverage for [^:]+:\s+(\d+%)<\/title>')
 summary_end_re = re.compile(r'\s+<td class="text">')
 
-__version__ = "0.4"
+__version__ = "0.5"
 
 
 class DiffCollectionFailed(Exception):
@@ -278,7 +278,3 @@ def setup_parser():
     parser.add_argument(dest='root', metavar='repo-dir',
                         help="Root of Git repo")
     return parser
-
-
-if __name__ == "__main__":
-    main()
