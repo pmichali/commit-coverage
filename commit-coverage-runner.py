@@ -5,7 +5,7 @@
 """Convenience wrapper for running commit-coverage directly from source tree."""
 
 
-from commit_coverage.commit_coverage import main
+from commit_coverage import main
 
 
 if __name__ == '__main__':
