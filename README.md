@@ -53,7 +53,7 @@ output looks like:
 ```
 
 Each file from the diff will be reported. If the file was not processed
-byt the coverage test, or there were no added or changed lines in the
+by the coverage test, or there were no added or changed lines in the
 diff for the file, this will be reported, as shown in the first two files.
 
 For files with coverage data and added/changes lines, the output will
