@@ -76,7 +76,7 @@ source_line_re = re.compile(r'<p id="n(\d+)" class="([^"]+)"')
 title_re = re.compile(r'\s*<title>Coverage for [^:]+:\s+(\d+%)<\/title>')
 summary_end_re = re.compile(r'\s+<td class="text">')
 
-__version__ = "0.2"
+__version__ = "0.3"
 
 
 class DiffCollectionFailed(Exception):

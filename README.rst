@@ -15,11 +15,9 @@ committed to the local repo).
 ## Behavior
 
 Assuming you have a repo with uncommitted changes, you can run the command
-as follows:
+as follows::
 
-```
     python commit_coverage /opt/stack/networking-cisco
-```
 
 The argument must be the root of a git repo that has coverage data in a
 'cover' subdirectory.
@@ -27,9 +25,8 @@ The argument must be the root of a git repo that has coverage data in a
 By default, this will create diffs comparing the working directory, to the
 latest commit (HEAD), with (up to) three lines of context. That output will
 be checked against coverage data and a report produced. Here's what the
-output looks like:
+output looks like::
 
-```
     devstack/csr1kv/cisco_neutron (No coverage data)
 
     networking_cisco/apps/saf/agent/dfa_agent.py (No added/changed lines)
@@ -50,7 +47,6 @@ output looks like:
       386                                'org:part name is greater than 32'),
       387                            len(':'.join((proj_name, part_name))))
       388 mis              return
-```
 
 Each file from the diff will be reported. If the file was not processed
 by the coverage test, or there were no added or changed lines in the
@@ -85,12 +81,10 @@ diff between the working directory and latest commit (HEAD). Instead, you can
 provide 'committed', which will compare the current commit against the
 previous commit (HEAD^..HEAD). Otherwise, you can provide the commit versions
 to use for the diff, just make sure that the most recent corresponds to the
-coverage report. For example, you can do:
+coverage report. For example, you can do::
 
-```
     cd /opt/stack/neutron
     python commit_coverage --context 5 --which HEAD~5..HEAD~ .
-```
 
 This runs the tool on a neutron repo, shows more context lines, and will
 do a diff between HEAD~5 and HEAD~ commits.
