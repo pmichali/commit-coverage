@@ -1,10 +1,11 @@
-# commit-coverage
-
+commit-coverage
+===============
 
 This allows you to assess the coverage of changes you have in a repo. It
 is intended for use, when preparing to push code up for review upstream.
 
-## Usage
+Usage
+-----
 
 As a prerequisite to using this script, run coverage in the repo, to
 produce coverage report files in a 'cover' directory at the root of the
@@ -12,7 +13,8 @@ repo's tree. This coverage should be done on the code that will be
 upstreamed (either what is in the working directory, or what has been
 committed to the local repo).
 
-## Behavior
+Behavior
+--------
 
 Assuming you have a repo with uncommitted changes, you can run the command
 as follows::
